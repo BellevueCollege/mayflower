@@ -22,8 +22,7 @@ if ( typeof limit_searchform_scope !== 'undefined' ||
 					"engineKey" : search_api_key,
 					"filters" : {
 						"page": {
-							//"site_home_url" : [filter_value]
-							"site_home_url" : ['www.bellevuecollege.edu/testing']
+							"site_home_url" : [filter_value]
 						}
 						
 					},

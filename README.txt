@@ -16,11 +16,23 @@ Mayflower has the following dependencies:
 Specific configuration and release information is available in [Bellevue College Docs](https://github.com/BellevueCollege/docs/tree/master/mayflower). 
 
 == Changelog ==
-= 2.22 =
+= 2.24 =
+* Fix filtered autocomplete
+
+= 2.24 =
+* Add search history dropdown to lite
+* Update gulp and other build processes
+* Fix excerpts in block editor
+
+= 2.23.1 =
+* Disable Search and Calendar blocks for WP 5.2
+
+= 2.23 =
 * Fix page SEO attributes
 * Remove CollegeHumor and MixCloud blocks
 * Remove More block in Gutenberg
 * Change how embeds are embedded (WordPress default instead of BS3)
+
 = 2.22 =
 * Add Image post format for large featured images on posts
 * Fix Alternative (Alt) Text on Attachment pages
