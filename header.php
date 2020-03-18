@@ -14,7 +14,7 @@ if ( ! ( is_array( $mayflower_options ) ) ) {
 }
 
 $mayflower_theme_version = wp_get_theme();
-$post_meta_data = get_post_custom( $post->ID );
+$post_meta_data          = get_post_custom( $post->ID );
 ?>
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="ie7"> <![endif]-->
@@ -28,7 +28,7 @@ $post_meta_data = get_post_custom( $post->ID );
 	<?php if ( isset( $post_meta_data['_seo_meta_description'][0] ) ) { ?>
 		<meta property="og:title" content="<?php echo esc_html( $post_meta_data['_seo_custom_page_title'][0] ); ?>" />
 	<?php } else { ?>
-		<meta property="og:title" content="<?php echo get_the_title() . ' :: ' . get_bloginfo( 'name', 'display' ) . ' @ Bellevue College' ?>" />
+		<meta property="og:title" content="<?php echo get_the_title() . ' :: ' . get_bloginfo( 'name', 'display' ) . ' @ Bellevue College'; ?>" />
 	<?php } ?>
 
 	<?php if ( isset( $post_meta_data['_seo_meta_description'][0] ) ) { ?>
@@ -43,9 +43,9 @@ $post_meta_data = get_post_custom( $post->ID );
 	<link rel="icon" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/bellevue.ico" />
 
 	<!-- Swiftype meta tags -->
-	<meta class='swiftype' name='popularity' data-type='integer' content='<?php echo is_front_page( $post->ID ) ? 5 : 1 ?>' />
-	<meta class="swiftype" name="published_at" data-type="date" content="<?php the_modified_date( 'Y-m-d' ) ?>" />
-	<meta class="swiftype" name="site_home_url" data-type="string" content="<?php echo esc_textarea( mayflower_trimmed_url() ) ?>" />
+	<meta class='swiftype' name='popularity' data-type='integer' content='<?php echo is_front_page( $post->ID ) ? 5 : 1; ?>' />
+	<meta class="swiftype" name="published_at" data-type="date" content="<?php the_modified_date( 'Y-m-d' ); ?>" />
+	<meta class="swiftype" name="site_home_url" data-type="string" content="<?php echo esc_textarea( mayflower_trimmed_url() ); ?>" />
 
 	<?php if ( is_archive( $post->ID ) ) { ?>
 		<meta name="robots" content="noindex, follow">
@@ -55,23 +55,23 @@ $post_meta_data = get_post_custom( $post->ID );
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 
 	<!--- Open Graph Tags -->
-	<?php if ( 'post' === get_post_type( ) ) : ?>
+	<?php if ( 'post' === get_post_type() ) : ?>
 		<meta property="og:type" content="article" />
-		<meta property="article:published_time" content="<?php echo get_the_date('c') ?>" />
-		<meta property="article:modified_time" content="<?php echo get_the_modified_date('c') ?>" />
+		<meta property="article:published_time" content="<?php echo get_the_date( 'c' ); ?>" />
+		<meta property="article:modified_time" content="<?php echo get_the_modified_date( 'c' ); ?>" />
 	<?php else : ?>
 		<meta property="og:type" content="website" />
 	<?php endif; ?>
 
-	<?php if ( get_the_post_thumbnail_url( get_the_ID(),'medium') ) : ?>
-		<meta property="og:image" content="<?php echo get_the_post_thumbnail_url( get_the_ID(),'medium') ?>" />
-	<?php else: ?>
+	<?php if ( get_the_post_thumbnail_url( get_the_ID(), 'medium' ) ) : ?>
+		<meta property="og:image" content="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" />
+	<?php else : ?>
 		<meta property="og:image" content="https://s.bellevuecollege.edu/bc-og-default.jpg" />
 	<?php endif; ?>
 
-	<meta property="og:url" content="<?php echo get_permalink() ?>" />
+	<meta property="og:url" content="<?php echo get_permalink(); ?>" />
 	<meta property="og:site_name" content="Bellevue College" />
-	
+
 
 	<?php wp_head(); ?>
 </head>
@@ -84,19 +84,20 @@ $post_meta_data = get_post_custom( $post->ID );
 		do_action( 'wp_body_open' );
 	}
 
-	##############################################
-	### Branded or Lite versions of the header
-	##############################################
+	//
+	// Branded or Lite versions of the header
+	//
 
 	if ( 'branded' === $mayflower_brand ) :
-		###############################
-		### --- Branded version --- ###
-		###############################
+		//
+		// --- Branded version --- ###
+		//
 
 		bc_tophead_big();
 
-		//display site title on branded version
-		if ( is_404() ) { ?>
+		// display site title on branded version
+		if ( is_404() ) {
+			?>
 			<div id="main-wrap" class="<?php echo esc_attr( $mayflower_brand_css ); ?>">
 				<div id="main" class="container no-padding">
 		<?php } else { ?>
@@ -111,19 +112,23 @@ $post_meta_data = get_post_custom( $post->ID );
 							</p>
 						</div><!-- container header -->
 					</div><!-- content-padding -->
-		<?php }
+			<?php
+		}
 	else :
-		############################
-		### --- Lite version --- ###
-		############################
+		//
+		// --- Lite version --- ###
+		//
 
-		bc_tophead(); ?>
+		bc_tophead();
+		?>
 		<div id="main-wrap" class="<?php echo esc_attr( $mayflower_brand_css ); ?>">
 			<div id="main" class="container no-padding">
 				<div id="top" class="mobile-s17">
 						<div id="site-branding">
-							<?php $header_image = get_header_image();
-							if ( ! empty( $header_image ) ) : ?>
+							<?php
+							$header_image = get_header_image();
+							if ( ! empty( $header_image ) ) :
+								?>
 								<div class="header-image">
 									<a title="Return to Home Page" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 										<img src="<?php header_image(); ?>" class="header-image"  alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?> : <?php bloginfo( 'description' ); ?>" />
@@ -133,20 +138,31 @@ $post_meta_data = get_post_custom( $post->ID );
 								<p class="site-title">
 									<a title="Return to Home Page" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 								</p>
-								<p class="site-description <?php if ( get_bloginfo( 'description' ) ){ echo 'site-description-margin'; } ?>"><?php bloginfo( 'description' ); ?></p>
+								<p class="site-description
+								<?php
+								if ( get_bloginfo( 'description' ) ) {
+									echo 'site-description-margin'; }
+								?>
+								"><?php bloginfo( 'description' ); ?></p>
 							<?php endif; // end no header image ?>
 						</div><!-- #site-branding -->
-						<div id="header-actions-container" class="<?php
+						<div id="header-actions-container" class="
+						<?php
 						if ( get_bloginfo( 'description' ) ) {
 							echo 'header-search-w-description ';
 						}
 						if ( '' === get_bloginfo( 'description' ) ) {
 							echo 'header-social-links-no-margin ';
-						} ?>">
-							<div class="social-media <?php 
-								if( empty( $mayflower_options['facebook'] ) && empty( $mayflower_options['twitter'] ) && empty( $mayflower_options['youtube'] ) && empty( $mayflower_options['instagram'] ) && empty( $mayflower_options['linkedin'] ) ){
-									echo 'social-media-no-margin'; 
-								} ?>">
+						}
+						?>
+						">
+							<div class="social-media
+							<?php
+							if ( empty( $mayflower_options['facebook'] ) && empty( $mayflower_options['twitter'] ) && empty( $mayflower_options['youtube'] ) && empty( $mayflower_options['instagram'] ) && empty( $mayflower_options['linkedin'] ) ) {
+								echo 'social-media-no-margin';
+							}
+							?>
+								">
 								<ul>
 									<?php if ( ! empty( $mayflower_options['facebook'] ) ) { ?>
 										<li><a href="<?php echo esc_url( $mayflower_options['facebook'] ); ?>" title="Facebook"><img src="<?php echo esc_url( $globals_url ); ?>i/facebook.png" alt="facebook" /></a></li>
@@ -198,7 +214,11 @@ $post_meta_data = get_post_custom( $post->ID );
 	<div class="row">
 		<div class="col-md-12">
 
-			<?php //add flexwrap if we are in the lite version
-			if ( 'lite' === $mayflower_brand ) { ?>
+			<?php
+			mayflower_sitewide_notice();
+			// add flexwrap if we are in the lite version
+			if ( 'lite' === $mayflower_brand ) {
+				?>
 				<div class="flexwrap">
-			<?php }
+				<?php
+			}

@@ -413,3 +413,18 @@ function save_global_section_meta( $post_id ) {
 		}
 	} // End foreach().
 }
+
+/**
+ * Sitewide Notice
+ */
+function mayflower_sitewide_notice() {
+	if ( class_exists( 'MFSN' ) && MFSN::active() ) {
+		?>
+		<div class="sitewide-notice">
+			<div class="alert alert-danger">
+				<?php MFSN::display(); ?>
+			</div>
+		</div>
+		<?php
+	}
+}
