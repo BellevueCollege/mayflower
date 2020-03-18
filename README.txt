@@ -13,9 +13,12 @@ Mayflower has the following dependencies:
 1. Globals Style Library (must be available on the same server)
 2. [NPM](https://nodejs.org/en/) and [Gulp](http://gulpjs.com/) installed on development systems
 
-Specific configuration and release information is available in [Bellevue College Docs](https://github.com/BellevueCollege/docs/tree/master/mayflower). 
+Specific configuration and release information is available in [Bellevue College Docs](https://github.com/BellevueCollege/docs/tree/master/mayflower).
 
 == Changelog ==
+= 2.25 =
+* Add Sitewide Notification
+
 = 2.24 =
 * Fix filtered autocomplete
 
@@ -342,7 +345,7 @@ Fix post display on site and post homepages
 
 == Upgrade Notice ==
 = 2.23 =
-Bug fixes, bug fixes, and more bug fixes! Embeds behave differently as well. 
+Bug fixes, bug fixes, and more bug fixes! Embeds behave differently as well.
 
 = 2.22 =
 New post format, Block Editor features, and bug fixes
