@@ -40,5 +40,3 @@ gulp.1
 
 # Composer stuff - composer is not currently used within Mayflower, so this ignores ALL composer files
 vendor
-composer.json
-composer.lock

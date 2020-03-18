@@ -10,71 +10,70 @@ $brand-danger:          #C4122F; // BC Brand Red
 
 /* Import from Globals */
 
-.wp-block div[class^="wp-block-"]{
-    @import "./node_modules/globals/sass/partials/base";
+.wp-block div[class^="wp-block-"] {
 
-    @import "./node_modules/globals/sass/partials/bootstrap-overrides";
+	@import "./node_modules/globals/src/3/sass/partials/base";
+	@import "./node_modules/globals/src/3/sass/partials/bootstrap-overrides";
+	@import "./node_modules/globals/src/3/sass/partials/typography";
+	@import "./node_modules/globals/src/3/sass/partials/structure";
+	@import "./node_modules/globals/src/3/sass/partials/pagination";
+	@import "./node_modules/globals/src/3/sass/partials/swiftype";
 
-    @import "./node_modules/globals/sass/partials/typography";
-
-    @import "./node_modules/globals/sass/partials/structure";
-
-    @import "./node_modules/globals/sass/partials/pagination";
-
-    @import "./node_modules/globals/sass/partials/swiftype";
-    
-    /* Override Bootstrap in Nested Blocks */
-    .components-icon-button {
-        overflow: hidden;
-    }
+	/* Override Bootstrap in Nested Blocks */
+	.components-icon-button {
+		overflow: hidden;
+	}
 
 
 }
+
 /* Main column width */
 .wp-block {
-    max-width: 810px;
+	max-width: 810px;
 }
 
 /* Width of "wide" blocks */
 .wp-block[data-align="wide"] {
-    max-width: 870px;
+	max-width: 870px;
 }
 
 /* Width of "full-wide" blocks */
 .wp-block[data-align="full"] {
-    max-width: none;
+	max-width: none;
 }
 
 /* Images - alt text issues */
 
 body.gutenberg-editor-page .editor-block-list__block img[alt=""] {
-	outline: 4px dashed #F2C01E;
-	outline-offset: .25em;
+	outline: 4px dashed #f2c01e;
+	outline-offset: 0.25em;
 }
 
 body.gutenberg-editor-page .editor-block-list__block img:not([alt]),
 body.gutenberg-editor-page .editor-block-list__block a img[alt=""] {
-	outline: 4px dashed #C4122F;
-	outline-offset: .25em;
-} 
+	outline: 4px dashed #c4122f;
+	outline-offset: 0.25em;
+}
 
 
 /* Style things */
 
 /* Style Quote Block */
 body.gutenberg-editor-page .editor-block-list__block blockquote.wp-block-quote::before {
-    display: block;
-    content: "\201C";
-    font-size: 6rem;
-    position: absolute;
-    left: 0.1em;
-    top: -.5em;
-    color: #777777;
+	display: block;
+	content: "\201C";
+	font-size: 6rem;
+	position: absolute;
+	left: 0.1em;
+	top: -0.5em;
+	color: #777;
 }
+
 body.gutenberg-editor-page .editor-block-list__block blockquote.wp-block-quote {
 	border-left: #eee 5px solid;
 	padding-left: 3em;
 }
+
 body.gutenberg-editor-page .editor-block-list__block blockquote.wp-block-quote,
 body.gutenberg-editor-page .editor-block-list__block blockquote.wp-block-quote p,
 body.gutenberg-editor-page .editor-block-list__block blockquote.wp-block-quote cite {
@@ -82,13 +81,14 @@ body.gutenberg-editor-page .editor-block-list__block blockquote.wp-block-quote c
 	font-size: 1.2em;
 	margin: 0;
 }
+
 body.gutenberg-editor-page .editor-block-list__block blockquote.wp-block-quote cite {
 	font-style: italic;
 	color: inherit;
 }
 
 body.gutenberg-editor-page .editor-block-list__block .alignnone {
-    margin: 20px 20px 5px 0;
+	margin: 20px 20px 5px 0;
 }
 
 body.gutenberg-editor-page .editor-block-list__block .alignnone,
@@ -100,20 +100,21 @@ body.gutenberg-editor-page .editor-block-list__block .aligncenter {
 }
 
 @media screen and (min-width: 768px) {
-    body.gutenberg-editor-page .editor-block-list__block .alignright {
-        float:right;
-        margin: .5em 0 1em 1em;
-    }
 
-    body.gutenberg-editor-page .editor-block-list__block .alignleft {
-        float: left;
-        margin: .5em 1em 1em 0;
-    }
+	body.gutenberg-editor-page .editor-block-list__block .alignright {
+		float: right;
+		margin: 0.5em 0 1em 1em;
+	}
 
-    body.gutenberg-editor-page .editor-block-list__block .aligncenter {
-        display: block;
-        margin: .5em auto .5em auto;
-    }
+	body.gutenberg-editor-page .editor-block-list__block .alignleft {
+		float: left;
+		margin: 0.5em 1em 1em 0;
+	}
+
+	body.gutenberg-editor-page .editor-block-list__block .aligncenter {
+		display: block;
+		margin: 0.5em auto 0.5em auto;
+	}
 }
 
 
@@ -129,18 +130,19 @@ body.gutenberg-editor-page .editor-block-list__block .wp-caption.alignnone {
 }
 
 body.gutenberg-editor-page .editor-block-list__block .wp-caption.alignnone {
-    margin: 20px 20px 5px 0;
+	margin: 20px 20px 5px 0;
 }
 
 body.gutenberg-editor-page .editor-block-list__block .wp-caption .wp-caption-text,
 body.gutenberg-editor-page .editor-block-list__block .gallery-caption,
 body.gutenberg-editor-page .editor-block-list__block .entry-caption {
-    font-size: .85em;
-    line-height: 16px;
-    margin: .25em 0;
-	padding: 0 .25em;
+	font-size: 0.85em;
+	line-height: 16px;
+	margin: 0.25em 0;
+	padding: 0 0.25em;
 }
-body.gutenberg-editor-page .editor-block-list__block .wp-caption-dd  {
+
+body.gutenberg-editor-page .editor-block-list__block .wp-caption-dd {
 	margin: 0;
 	padding: 0;
 }
@@ -149,6 +151,7 @@ body.gutenberg-editor-page .editor-block-list__block .content-row {
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
+
 body.gutenberg-editor-page .editor-block-list__block .row-padding {
 	padding-top: 1em;
 	padding-bottom: 1em;
