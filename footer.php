@@ -1,3 +1,4 @@
+<!--noindex-->
 <?php
 global $mayflower_brand;
 if ( $mayflower_brand == 'lite' ) {
@@ -23,6 +24,6 @@ wp_footer();
 $mayflower_version = wp_get_theme();
 echo $mayflower_version->Name . " version " . $mayflower_version->Version;
 ?>  -->
-
+<!--endnoindex-->
 </body>
 </html>

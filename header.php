@@ -52,6 +52,11 @@ $post_meta_data          = get_post_custom( $post->ID );
 	<?php } ?>
 	<!-- / Swiftype meta tags -->
 
+	<meta class="funnelback" name="fb_site_name" content="<?php echo get_bloginfo( 'name', 'display' ) ?>" />
+	<?php if ( get_the_post_thumbnail_url( get_the_ID(), 'medium' ) ) : ?>
+		<meta class="funnelback" name="fb_featured_image" content="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'medium' ) ); ?>" />
+	<?php endif; ?>
+
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 
 	<!--- Open Graph Tags -->
@@ -59,8 +64,10 @@ $post_meta_data          = get_post_custom( $post->ID );
 		<meta property="og:type" content="article" />
 		<meta property="article:published_time" content="<?php echo get_the_date( 'c' ); ?>" />
 		<meta property="article:modified_time" content="<?php echo get_the_modified_date( 'c' ); ?>" />
+		<meta property="og:updated_time" content="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>" />
 	<?php else : ?>
 		<meta property="og:type" content="website" />
+		<meta property="og:updated_time" content="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>" />
 	<?php endif; ?>
 
 	<?php if ( get_the_post_thumbnail_url( get_the_ID(), 'medium' ) ) : ?>
@@ -76,7 +83,7 @@ $post_meta_data          = get_post_custom( $post->ID );
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?>><!--noindex-->
 	<?php
 	if ( function_exists( 'wp_body_open' ) ) {
 		wp_body_open();
@@ -212,7 +219,7 @@ $post_meta_data          = get_post_custom( $post->ID );
 	<?php endif; // End if(). ?>
 
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12"><!--endnoindex-->
 
 			<?php
 			mayflower_sitewide_notice();
