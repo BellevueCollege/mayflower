@@ -7,16 +7,16 @@ if ( ! ( is_array( $mayflower_options ) ) ) {
 }
 
 // Set variables for ease of use/configuration
-$limit_searchform_scope  = $mayflower_options['limit_searchform_scope']; //
-$search_url_default      = 'https://www.bellevuecollege.edu/search/'; //
-$search_url              = ( $limit_searchform_scope && ( '' !== $mayflower_options['custom_search_url'] ) ) ?
-								$mayflower_options['custom_search_url'] : $search_url_default; //
-$search_field_id         = $limit_searchform_scope ? 'college-search-field-custom' : 'college-search-field'; //
-$filter_value            = mayflower_trimmed_url(); //
-$search_api_key          = '' !== $mayflower_options['custom_search_api_key'] ? $mayflower_options['custom_search_api_key'] :
-							'YUFwdxQ6-Kaa9Zac4rpb'; // <-- Default API Key //
-$search_query_peram      = 'txtQuery';
-$filter_peram            = 'site[]'; // hardcoded default.
+$limit_searchform_scope = $mayflower_options['limit_searchform_scope'];
+$search_url_default     = 'https://www.bellevuecollege.edu/search/';
+$search_url             = ( $limit_searchform_scope && ( '' !== $mayflower_options['custom_search_url'] ) ) ?
+								$mayflower_options['custom_search_url'] : $search_url_default;
+$search_field_id        = $limit_searchform_scope ? 'college-search-field-custom' : 'college-search-field';
+$filter_value           = ( '' !== $mayflower_options['custom_search_scope'] ) ? $mayflower_options['custom_search_scope'] : mayflower_trimmed_url();
+$search_api_key         = '' !== $mayflower_options['custom_search_api_key'] ? $mayflower_options['custom_search_api_key'] :
+								'YUFwdxQ6-Kaa9Zac4rpb'; // <-- Default API Key.
+$search_query_peram     = 'query';
+$filter_peram           = 'scope'; // Hardcoded default.
 
 ?>
 <form action="<?php echo esc_url( $search_url ); ?>" method="get" class="form-search" id="bc-search">
