@@ -74,6 +74,7 @@ $mayflower_theme_option_defaults = array(
 	'limit_searchform_scope'  => false,
 	'custom_search_url'       => '',
 	'custom_search_api_key'   => '',
+	'custom_search_scope'     => '',
 );
 
 /**
@@ -789,6 +790,16 @@ function mayflower_register_theme_customizer( $wp_customize ) {
 		'capability'        => 'unfiltered_html', //Limit this section to Super-Admin only
 		'sanitize_callback' => 'sanitize_boolean',
 	) );
+	$wp_customize->add_setting(
+		'theme_mayflower_options[custom_search_scope]',
+		array(
+			'type'              => 'option',
+			'default'           => $mayflower_theme_option_defaults['custom_search_scope'],
+			'transport'         => 'refresh',
+			'capability'        => 'unfiltered_html', // Limit this section to Super-Admin only.
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
 	$wp_customize->add_setting( 'theme_mayflower_options[custom_search_url]' , array(
 		'type'              => 'option',
 		'default'           => $mayflower_theme_option_defaults['custom_search_url'],
@@ -817,6 +828,19 @@ function mayflower_register_theme_customizer( $wp_customize ) {
 		'settings'     => 'theme_mayflower_options[limit_searchform_scope]',
 		'type'         => 'checkbox',
 	) ) );
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'custom_search_scope',
+			array(
+				'label'       => __( 'Custom Search Scope', 'mayflower' ),
+				'description' => __( 'Use a custom search scope instead the current site. Comma separated list of URL or URL parts.', 'mayflower' ),
+				'section'     => 'mayflower_admin_options',
+				'settings'    => 'theme_mayflower_options[custom_search_scope]',
+				'type'        => 'text',
+			)
+		)
+	);
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'custom_search_url', array(
 		'label'        => __( 'Custom Search URL', 'mayflower' ),
 		'description'  => __( 'Allows definition of a custom URL for search (instead of passing a filter)', 'mayflower' ),

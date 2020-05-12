@@ -9,41 +9,10 @@ if ( typeof limit_searchform_scope !== 'undefined' ||
 	 typeof search_field_id        !== 'undefined' ||
 	 typeof custom_search_url      !== 'undefined' ||
 	 typeof search_url_default     !== 'undefined' ) {
-	
+
 	(function ($) {
 		// Double check this should run
 		if ( limit_searchform_scope ) {
-
-			// If the custom search URL is not set, use site URL based filters
-			if ( '' === custom_search_url ) {
-
-				// Swiftype Autofill (script in Globals)
-				$( '#' + search_field_id ).swiftype({ 
-					"engineKey" : search_api_key,
-					"filters" : {
-						"page": {
-							"site_home_url" : [filter_value]
-						}
-						
-					},
-					resultLimit: 5,
-					typingDelay: 600,
-					renderFunction: function(document_type, item, idx) {
-						return '<p class="title" data-url="'+ item['url'] +'">' + Swiftype.htmlEscape(item['title']) + '</p>';
-					}
-				});
-				
-				
-			} else { // Otherwise, use custom API key to pull from custom search engine
-				$( '#' + search_field_id ).swiftype({ 
-					"engineKey" : search_api_key,
-					resultLimit: 5,
-					typingDelay: 600,
-					renderFunction: function(document_type, item, idx) {
-						return '<p class="title" data-url="'+ item['url'] +'">' + Swiftype.htmlEscape(item['title']) + '</p>';
-					}
-				});
-			}
 
 			// Build search history dropdown, from Globals
 			$('#bc-search-container-lite').searchHistory({
@@ -61,7 +30,7 @@ if ( typeof limit_searchform_scope !== 'undefined' ||
 					return {};
 				}())
 			});
-		
+
 			/* Generate search URL in dropdown */
 			$('#college-search-site-link').click( function( event ) {
 
@@ -88,7 +57,7 @@ if ( typeof limit_searchform_scope !== 'undefined' ||
 				// Submit
 				$('#bc-search').submit();
 			});
-				
+
 		}
 	})(jQuery);
 }
