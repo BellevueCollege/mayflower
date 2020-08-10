@@ -11,7 +11,7 @@
     "not dead"
   ],
   "dependencies": {
-    "npm": "^6.14.5"
+    "npm": "^6.14.7"
   },
   "devDependencies": {
     "@wordpress/eslint-plugin": "^3.4.1",
