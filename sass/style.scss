@@ -181,6 +181,12 @@ video {
 
 /* ###################################### */
 
+/* Fix Gallery Block on Edge */
+.blocks-gallery-grid,
+.wp-block-gallery {
+	max-width: 100%;
+}
+
 /* Mixins to automate column options */
 @mixin gallery-item( $columns, $spacing, $min-size: 100px) {
 
