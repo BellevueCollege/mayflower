@@ -7,11 +7,11 @@
  * For more information on hooks, actions, and filters,
  * see {@link http://codex.wordpress.org/Plugin_API Plugin API}.
  *
- * @package 	Mayflower
- * @copyright	Copyright (c) 2015 Bellevue College
- * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ * @package     Mayflower
+ * @copyright   Copyright (c) 2015 Bellevue College
+ * @license     http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
  *
- * @since 		Mayflower 1.0
+ * @since       Mayflower 1.0
  */
 
 
@@ -21,7 +21,6 @@
  *
  * Add Theme support for and configure various core WordPress
  * functionality.
- *
  */
 
 function mayflower_setup() {
@@ -132,7 +131,7 @@ function mayflower_setup() {
 	 * Child Themes can override this setting
 	 * via add_image_size().
 	 */
-	add_image_size( 'lite_header_logo', 1170, 63, true);
+	add_image_size( 'lite_header_logo', 1170, 63, true );
 
 	/**
 	 * Add 'sort-screen-thumbnail' Image size
@@ -177,7 +176,7 @@ function mayflower_setup() {
 	 * Child Themes can override this setting
 	 * via add_image_size().
 	 */
-	add_image_size( 'featured-full', 1170,488,true);
+	add_image_size( 'featured-full', 1170, 488, true );
 
 	/**
 	 * Add 'featured-in-content' Image size
@@ -192,7 +191,7 @@ function mayflower_setup() {
 	 * Child Themes can override this setting
 	 * via add_image_size().
 	 */
-	add_image_size( 'featured-in-content', 900,375,true);
+	add_image_size( 'featured-in-content', 900, 375, true );
 
 	/**
 	 * Add 'home-small-ad' Image size
@@ -207,7 +206,7 @@ function mayflower_setup() {
 	 * Child Themes can override this setting
 	 * via add_image_size().
 	 */
-	add_image_size( 'home-small-ad', 300,200,true);
+	add_image_size( 'home-small-ad', 300, 200, true );
 
 	/**
 	 * Add theme support for HTML 5 Galleries
@@ -222,18 +221,19 @@ function mayflower_setup() {
 	 * Registers one navigation menu for Top Nav
 	 * in Mayflower Lite
 	 *
-	 * @since Wordpress 3.0
+	 * @since WordPress 3.0
 	 */
-	register_nav_menus( array(
-		'nav-top' => 'Top Navigation',
-	));
+	register_nav_menus(
+		array(
+			'nav-top' => 'Top Navigation',
+		)
+	);
 
 	/**
 	 * Add support for excerpts on pages
 	 *
 	 * Allows page to define excerpts to be used
 	 * on navigation pages, etc.
-	 *
 	 */
 	add_post_type_support( 'page', 'excerpt' );
 
@@ -241,22 +241,23 @@ function mayflower_setup() {
 	 * Add theme support for a custom header image
 	 *
 	 * Allows logo display in Mayflower Lite
-	 *
 	 */
-	add_theme_support( 'custom-header', array(
-		'default-image' => '',
-		'width'         => 690,
-		'height'        => 100,
-		'flex-height'   => true,
-		'header-text'   => false
-	));
+	add_theme_support(
+		'custom-header',
+		array(
+			'default-image' => '',
+			'width'         => 690,
+			'height'        => 100,
+			'flex-height'   => true,
+			'header-text'   => false,
+		)
+	);
 
 	/**
 	 * Add support post formats
 	 *
 	 * Allows for support of the following formats
 	 * * Video
-	 *
 	 */
 	add_theme_support( 'post-formats', array( 'video', 'image' ) );
 
@@ -265,16 +266,13 @@ function mayflower_setup() {
 	 *
 	 * Configures Tabs Shortcode plugin to use
 	 * Bootstrap styles.
-	 *
 	 */
 	add_theme_support( 'tabs', 'twitter-bootstrap' );
-
 
 	/**
 	 * Enable Simple Page Sidebar support in CPT
 	 *
 	 * Enable Custom Page sidebars for custom post types
-	 *
 	 */
 	add_post_type_support( 'ceprograms', 'simple-page-sidebars' );
 
@@ -282,7 +280,6 @@ function mayflower_setup() {
 	 * Set maximum content width for theme
 	 *
 	 * Maximum width for insterted media.
-	 *
 	 */
 	if ( ! isset( $content_width ) ) {
 		$content_width = 1170;
@@ -291,7 +288,7 @@ function mayflower_setup() {
 	/**
 	 * Set Default Image Link to None
 	 */
-	update_option('image_default_link_type','none');
+	update_option( 'image_default_link_type', 'none' );
 
 	/**
 	 * Set Default Image Alignment to Left
@@ -307,73 +304,87 @@ function mayflower_setup() {
 	 */
 
 	// Define custom color pallette
-	add_theme_support( 'editor-color-palette', array(
+	add_theme_support(
+		'editor-color-palette',
 		array(
-			'name'  => __( 'White', 'mayflower' ),
-			'slug'  => 'white',
-			'color' => '#fff',
-		),
-		array(
-			'name'  => __( 'Black', 'mayflower' ),
-			'slug'  => 'black',
-			'color' => '#000',
-		),
-		array(
-			'name'  => __( 'BC Blue', 'mayflower' ),
-			'slug'  => 'bc-blue',
-			'color' => '#003D79',
-		),
-		array(
-			'name'  => __( 'BC Silver', 'mayflower' ),
-			'slug'  => 'bc-silver',
-			'color' => '#A7A9AC',
-		),
-		array(
-			'name'  => __( 'BC Red', 'mayflower' ),
-			'slug'  => 'bc-red',
-			'color' => '#C4122F',
-		),
-		array(
-			'name'  => __( 'BC Green', 'mayflower' ),
-			'slug'  => 'bc-green',
-			'color' => '#AAB720',
-		),
-		array(
-			'name'  => __( 'BC Dark Blue', 'mayflower' ),
-			'slug'  => 'bc-dark-blue',
-			'color' => '#162F57',
-		),
-		array(
-			'name'  => __( 'BC Orange', 'mayflower' ),
-			'slug'  => 'bc-orange',
-			'color' => '#E36F1E',
-		),
-		array(
-			'name'  => __( 'BC Gold', 'mayflower' ),
-			'slug'  => 'bc-gold',
-			'color' => '#F2C01E',
-		),
-	) );
+			array(
+				'name'  => __( 'White', 'mayflower' ),
+				'slug'  => 'white',
+				'color' => '#fff',
+			),
+			array(
+				'name'  => __( 'Black', 'mayflower' ),
+				'slug'  => 'black',
+				'color' => '#000',
+			),
+			array(
+				'name'  => __( 'BC Blue', 'mayflower' ),
+				'slug'  => 'bc-blue',
+				'color' => '#003D79',
+			),
+			array(
+				'name'  => __( 'BC Silver', 'mayflower' ),
+				'slug'  => 'bc-silver',
+				'color' => '#A7A9AC',
+			),
+			array(
+				'name'  => __( 'BC Red', 'mayflower' ),
+				'slug'  => 'bc-red',
+				'color' => '#C4122F',
+			),
+			array(
+				'name'  => __( 'BC Green', 'mayflower' ),
+				'slug'  => 'bc-green',
+				'color' => '#AAB720',
+			),
+			array(
+				'name'  => __( 'BC Dark Blue', 'mayflower' ),
+				'slug'  => 'bc-dark-blue',
+				'color' => '#162F57',
+			),
+			array(
+				'name'  => __( 'BC Orange', 'mayflower' ),
+				'slug'  => 'bc-orange',
+				'color' => '#E36F1E',
+			),
+			array(
+				'name'  => __( 'BC Gold', 'mayflower' ),
+				'slug'  => 'bc-gold',
+				'color' => '#F2C01E',
+			),
+		)
+	);
 
 	// Remove custom color option
 	add_theme_support( 'disable-custom-colors' );
 
 	// Custom sizes
-	add_theme_support( 'editor-font-sizes', array(
+	add_theme_support(
+		'editor-font-sizes',
 		array(
-			'name'      => __( 'regular', 'mayflower' ),
-			'shortName' => __( 'Standard', 'mayflower' ),
-			'size'      => 16,
-			'slug'      => 'regular',
-		),
-	) );
+			array(
+				'name'      => __( 'regular', 'mayflower' ),
+				'shortName' => __( 'Standard', 'mayflower' ),
+				'size'      => 16,
+				'slug'      => 'regular',
+			),
+		)
+	);
 
-	add_theme_support('disable-custom-font-sizes');
+	add_theme_support( 'disable-custom-font-sizes' );
 
 	/**
 	 * Add Support for WordPress Style Responsive Embeds (WP 5.0)
 	 */
 	add_theme_support( 'responsive-embeds' );
+
+	/**
+	 *
+	 * Remove Core Patterns
+	 *
+	 * Many core patterns in WP 5.5 include blocks that we have removed
+	 */
+	remove_theme_support( 'core-block-patterns' );
 
 }
 
