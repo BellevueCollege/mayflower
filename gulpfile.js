@@ -1,15 +1,15 @@
 // Dependencies
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var notify       = require('gulp-notify');
-var sourcemaps   = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-var uglify       = require('gulp-uglify');
-var saveLicense  = require('uglify-save-license');
+const gulp         = require('gulp');
+const sass         = require('gulp-sass')(require('sass'));
+const notify       = require('gulp-notify');
+const sourcemaps   = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const uglify       = require('gulp-uglify');
+const saveLicense  = require('uglify-save-license');
 
 
 // Path Configs
-var config = {
+const config = {
   sassPath: './sass',
   cssPath:  '.',
   npmPath:  './node_modules',
@@ -24,7 +24,7 @@ var config = {
  **/
 
 // Production
-var sassOptions = {
+const sassOptions = {
   outputStyle: 'compressed',
   sourceComments: false,
   includePaths: [
@@ -35,8 +35,8 @@ var sassOptions = {
 }
 
 //Dev
-var sassDevOptions = {
-  outputStyle: 'nested',
+const sassDevOptions = {
+  outputStyle: 'expanded',
   sourceComments: true,
   includePaths: [
       config.npmPath + '/bootstrap-sass/assets/stylesheets',
@@ -51,7 +51,7 @@ var sassDevOptions = {
  * Tell uglify to keep certiain comments, etc
  *
  **/
-var uglifyOptions = {
+const uglifyOptions = {
   output: {
     comments: saveLicense
   }

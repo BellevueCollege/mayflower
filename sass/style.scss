@@ -553,7 +553,7 @@ ul.header-social-links li {
 		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 	}
 
-	input[type=radio] {
+	input[type="radio"] {
 		margin-left: 0.1em !important; /* messy, but needed to stop the right edge from being cut off */
 	}
 
@@ -617,7 +617,6 @@ ul.header-social-links li {
 	}
 
 }
-
 
 
 .sidebar {
@@ -1077,7 +1076,7 @@ ul.really_simple_twitter_widget li a {
 			}
 
 			.field_sublabel_below .ginput_complex.ginput_container label,
-			.field_sublabel_below div[class*=gfield_time_].ginput_container label {
+			.field_sublabel_below div[class*="gfield_time_"].ginput_container label {
 				margin: 1px 0 0 1px !important;
 			}
 		}

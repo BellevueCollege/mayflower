@@ -14,19 +14,18 @@
     "npm": "^6.14.9"
   },
   "devDependencies": {
-    "@wordpress/eslint-plugin": "^3.4.1",
+    "@wordpress/eslint-plugin": "^11.1.0",
     "bootstrap-sass": "^3.4.1",
-    "eslint": "^6.8.0",
-    "globals": "git+https://github.com/BellevueCollege/globals.git",
+    "eslint": "^8.12.0",
+    "globals": "github:BellevueCollege/globals#trunk",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "napa": "^3.0.0",
-    "stylelint": "^11.1.1",
-    "stylelint-config-wordpress": "^15.0.0",
+    "sass": "^1.49.11",
+    "stylelint-config-wordpress": "^17.0.0",
     "uglify-save-license": "^0.4.1"
   },
   "scripts": {
