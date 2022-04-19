@@ -26,5 +26,5 @@ window.onload = function () {
 	wp.blocks.unregisterBlockType('core/site-tagline');
 	wp.blocks.unregisterBlockType('core/post-comments');
 	wp.blocks.unregisterBlockType('core/loginout');
-	wp.blocks.unregisterBlockVariation( 'core/group', 'group-row' );
-}
+	wp.blocks.unregisterBlockVariation('core/group', 'group-row');
+};
