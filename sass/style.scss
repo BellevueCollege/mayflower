@@ -4,7 +4,7 @@ Theme URI: http://www.bellevuecollege.edu/its/
 Description: The Bellevue College Theme
 Author: Bellevue College Integration
 Author URI: http://www.bellevuecollege.edu
-Version: 2.28-#{versionStamp}#
+Version: 2.28.1-#{versionStamp}#
 GitHub Theme URI: bellevuecollege/mayflower
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,7 +35,7 @@ $font-heading: georgia, "Times New Roman", times, serif;
 $font-monospace: monaco, menlo, consolas, "Courier New", monospace;
 $std-line-height: 1.66666667em;
 $std-margin: 1em;
-$sm-margin: $std-margin/3;
+$sm-margin: calc($std-margin/3);
 
 // Bootstrap Breakpoints
 $breakpoint-bs-sm: 48em;
@@ -193,8 +193,8 @@ video {
 	// Support for browsers without proper CSS Grid support
 	.gallery.gallery-columns-#{$columns} .gallery-item {
 		flex: 0 0 auto;
-		width: (100%/$columns);
-		padding: $spacing/2;
+		width: calc(100%/$columns);
+		padding: calc($spacing/2);
 		min-width: $min-size;
 	}
 }
