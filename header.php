@@ -14,7 +14,7 @@ if ( ! ( is_array( $mayflower_options ) ) ) {
 }
 
 $mayflower_theme_version = wp_get_theme();
-$post_meta_data          = get_post_custom( $post->ID );
+$post_meta_data          = get_post_custom( $post->ID ?? null );
 ?>
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="ie7"> <![endif]-->
@@ -25,7 +25,7 @@ $post_meta_data          = get_post_custom( $post->ID );
 <!--<![endif]-->
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<?php if ( isset( $post_meta_data['_seo_meta_description'][0] ) ) { ?>
+	<?php if ( isset( $post_meta_data['_seo_custom_page_title'][0] ) ) { ?>
 		<meta property="og:title" content="<?php echo esc_html( $post_meta_data['_seo_custom_page_title'][0] ); ?>" />
 	<?php } else { ?>
 		<meta property="og:title" content="<?php echo get_the_title() . ' :: ' . get_bloginfo( 'name', 'display' ) . ' @ Bellevue College'; ?>" />
