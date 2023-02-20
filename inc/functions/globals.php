@@ -9,23 +9,23 @@
 /**
  * Set Up Globals Paths
  */
-$mayflower_globals_settings = get_option( 'globals_network_settings' ); 
+$mayflower_globals_settings = get_option( 'globals_network_settings' );
 if ( is_multisite() ) {
 	$mayflower_globals_settings = get_site_option( 'globals_network_settings' );
 }
-$globals_path = $mayflower_globals_settings['globals_path'];
-$append_path = $mayflower_globals_settings['append_path'];
+$globals_path = defined('BC_GLOBALS_3_PATH') ? BC_GLOBALS_3_PATH : $mayflower_globals_settings['globals_path'];
+$append_path = defined('BC_GLOBALS_3_APPEND_PATH') ? BC_GLOBALS_3_APPEND_PATH : $mayflower_globals_settings['append_path'];
 if ( empty( $globals_path ) ) {
 	$globals_path =  $_SERVER['DOCUMENT_ROOT'] . "/g/3/";
 } else if ( $append_path == true ) {
 	// Append globals path to document root if box is checked
 	$globals_path = $_SERVER['DOCUMENT_ROOT'] . $globals_path;
 }
-$globals_url = $mayflower_globals_settings['globals_url'];
+$globals_url = defined('BC_GLOBALS_3_URL') ? BC_GLOBALS_3_URL : $mayflower_globals_settings['globals_url'];
 if ( empty( $globals_url) ) {
 	$globals_url = "/g/3";
 }
-$globals_version = $mayflower_globals_settings['globals_version'];
+$globals_version = defined('BC_GLOBALS_3_VERSION') ? BC_GLOBALS_3_VERSION : $mayflower_globals_settings['globals_version'];
 $globals_path_over_http = $globals_url;
 $globals_google_analytics_code = $mayflower_globals_settings['globals_google_analytics_code'];
 
@@ -124,7 +124,7 @@ function mayflower_analytics () {
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			/*Site-Specific GA code*/
-			ga('create','<?php echo $mayflower_options['ga_code'] ?>','bellevuecollege.edu',{'name':'singlesite'}); 
+			ga('create','<?php echo $mayflower_options['ga_code'] ?>','bellevuecollege.edu',{'name':'singlesite'});
 			ga('singlesite.send','pageview');
 		</script>
 	<?php }
