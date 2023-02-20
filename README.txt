@@ -1,4 +1,4 @@
-=== Mayflower ===
+=== Mayflower Legacy (G3) ===
 Contributors: Bellevue College Integration Team
 Tags: blue, white, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, theme-options, accessibility-ready
 Requires at least: 4.4
@@ -6,7 +6,7 @@ Tested up to: 4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Mayflower is a WordPress theme created by Bellevue College as a unified theme for all college units.
+Mayflower is a WordPress theme created by Bellevue College as a unified theme for all college units. This is a legacy version based on Globals 3, and should no longer be used!
 
 = Special Features =
 Mayflower has the following dependencies:
@@ -14,6 +14,16 @@ Mayflower has the following dependencies:
 2. [NPM](https://nodejs.org/en/) and [Gulp](http://gulpjs.com/) installed on development systems
 
 Specific configuration and release information is available in [Bellevue College Docs](https://github.com/BellevueCollege/docs/tree/master/mayflower).
+
+Globals connection can be configured from the Network Admin when network activated, or through the following constants in the wp-config.php file
+
+```PHP
+// Legacy Theme Defaults
+define( 'BC_GLOBALS_3_PATH', '/g/3/' );
+define( 'BC_GLOBALS_3_APPEND_PATH', true );
+define( 'BC_GLOBALS_3_URL', 'https://www.bellevuecollege.edu/g/3/' );
+define( 'BC_GLOBALS_3_VERSION', '2.29' );
+```
 
 == Changelog ==
 = 2.26.1 =

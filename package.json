@@ -11,10 +11,10 @@
     "not dead"
   ],
   "dependencies": {
-    "npm": "^8.16.0"
+    "npm": "^9.5.0"
   },
   "devDependencies": {
-    "@wordpress/eslint-plugin": "^12.8.0",
+    "@wordpress/eslint-plugin": "^14.0.0",
     "bootstrap-sass": "^3.4.1",
     "eslint": "^8.12.0",
     "globals": "github:BellevueCollege/globals#trunk",
